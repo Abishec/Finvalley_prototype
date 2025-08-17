@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FinValley 9.0 Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>FinValley 9.0 Dashboard</h1>
+    <nav>
+      <button data-view="dashboard">Dashboard</button>
+      <button data-view="carry">Carry Simulator</button>
+      <button data-view="token">Tokenization Console</button>
+      <button data-view="onboard">New Fund Onboarding</button>
+      <button data-view="ai">AI Insights</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="view-dashboard" class="view active">
+      <h2>Centralized Dashboard</h2>
+      <canvas id="chartMetrics"></canvas>
+    </section>
+
+    <section id="view-carry" class="view">
+      <h2>Carry Simulator</h2>
+      <label>LP Roll-Forward %: <input id="inpRoll" type="number" value="70" /></label>
+      <label>Hurdle Rate %: <input id="inpHurdle" type="number" value="8" /></label>
+      <button id="btnCalc">Calculate</button>
+      <pre id="outCarry"></pre>
+    </section>
+
+    <section id="view-token" class="view">
+      <h2>Tokenization Console</h2>
+      <button id="btnIssue">Issue Mock Tokens</button>
+      <ul id="listTokens"></ul>
+    </section>
+
+    <section id="view-onboard" class="view">
+      <h2>New Fund Onboarding</h2>
+      <label>Investment ($): <input id="inpInvest" type="number" value="250000" /></label>
+      <button id="btnCalcMin">Calc Min Tickets</button>
+      <p id="outTickets"></p>
+    </section>
+
+    <section id="view-ai" class="view">
+      <h2>AI Insights (Placeholder)</h2>
+      <textarea id="inpQuery" placeholder="Ask a question…"></textarea>
+      <button id="btnAsk">Ask</button>
+      <pre id="outAI">“Feature coming soon.”</pre>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
